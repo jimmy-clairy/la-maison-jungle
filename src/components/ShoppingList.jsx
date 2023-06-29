@@ -26,7 +26,7 @@ export default function ShoppingList() {
                     <PlantItem 
                     key={plant.id} 
                     id={plant.id} 
-                    name={plant.name} 
+                    plantName={plant.name} 
                     cover={img} 
                     isBestSale={plant.isBestSale}
                     light={plant.light} 

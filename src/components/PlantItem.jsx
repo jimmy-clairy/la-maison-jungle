@@ -1,11 +1,16 @@
 import CareScale from './CareScale'
 import '../styles/PlantItem.css'
 
-function PlantItem({ cover, name, water, light }) {
+function PlantItem({id, cover, plantName, water, light }) {
+
+  function handleClick(e) {
+    console.log('✨ Ceci est mon event :', e)
+  }
+
 	return (
-		<li className='lmj-plant-item'>
-			<img className='lmj-plant-item-cover' src={cover} alt={`${name} cover`} />
-			{name}
+		<li className='lmj-plant-item' onClick={(e) => handleClick(e)}>
+			<img className='lmj-plant-item-cover' src={cover} alt={`${plantName} cover`} />
+			{plantName}
 			<div>
 				<CareScale careType='water' scaleValue={water} />
 				<CareScale careType='light' scaleValue={light} />
