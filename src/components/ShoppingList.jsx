@@ -1,45 +1,31 @@
+import { useState } from 'react'
 import { plantList } from '../data/plantList'
 import '../styles/ShoppingList.css'
-// import CareScale from './CareScale'
+import Categories from './Categories'
 import PlantItem from './PlantItem'
-import img from '../assets/monstera.jpg'
 
-export default function ShoppingList() {
+export default function ShoppingList({cart,setCart}) {
 
-    const categories = []
-    plantList.forEach(plant => {
-        if (categories.includes(plant.category)) {
-            return
+    const [category, setCategory] = useState('')
+
+    const resultCat = plantList.filter((plant) => {
+        if (category === '') {
+            return plantList
         }
-        categories.push(plant.category)
-    })
+        return category === plant.category
+    });
 
   return (		
-        <div>
-            <ul>
-                {categories.map((cat) => (
-                    <li key={cat}>{cat}</li>
-                ))}
-            </ul>
-            <ul className='lmj-plant-list'>
-                {plantList.map((plant) => (
-                    <PlantItem 
-                    key={plant.id} 
-                    id={plant.id} 
-                    plantName={plant.name} 
-                    cover={img} 
-                    isBestSale={plant.isBestSale}
-                    light={plant.light} 
-                    water={plant.water}
-                    />
-                    // <li key={plant.id} className='lmj-plant-item'>
-                    //     {plant.isBestSale && <div className='lmj-sales'>Soldes</div>}
-                    //     {plant.name}
-                    //     <CareScale careType='light' scaleValue={plant.light} />
-                    //     <CareScale careType='water' scaleValue={plant.water} />
-                    // </li>
+        <div className='shoppingList'>
+            <Categories setCategory={setCategory}/>
+            <ul className='plantList'>
+                {resultCat.map(({ id, cover, name, water, light, price, category }) => (
+                    <div key={id}>
+                        <PlantItem cover={cover} plantName={name} water={water} light={light} price={price} category={category} />
+                        <button onClick={() => console.log("Add " + name)}>Ajouter</button>
+                    </div>
                 ))}
             </ul>
         </div>
-)
+    )
 }

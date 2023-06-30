@@ -1,8 +1,11 @@
-.lmj-plant-list {
+.shoppingList {
+    flex: 1;
+}
+
+.plantList {
     list-style-type: none;
     padding: 32px;
     display: flex;
     flex-wrap: wrap;
-    max-width: 800px;
-    gap: 3rem;
+    justify-content: center;
 }

@@ -1,13 +1,48 @@
+import { useState } from "react"
 import "../styles/Cart.css"
 
-export default function Cart() {
-    const plantes = [{name:"Monstera",price:8},{name:"Lierre",price:10},{name:"Fleurs",price:15}]
-    
-  return (<div className="lmj-cart">
-  <h2>Panier</h2>
-  <ul>
-    {plantes.map((plante, index) => <li key={index}>{plante.name} : {plante.price} €</li>)}
-  </ul>
-  <p>Total : {plantes.reduce((a,b) => a + b.price,0)} €</p>
-    </div>)
+export default function Cart({cart, setCart}) {
+  
+  const [isOpen,setIsOpen] = useState(true)
+
+  const total = cart.reduce(
+		(acc, plantType) => acc + plantType.amount * plantType.price,
+		0
+	)
+
+	return isOpen ? (
+		<div className='cart cart--open'>
+			<button
+				className='cart__btn'
+				onClick={() => setIsOpen(false)}
+			>
+				Fermer
+			</button>
+			{cart.length > 0 ? (
+				<div>
+					<h2>Panier</h2>
+					<ul>
+						{cart.map(({ name, price, amount }, index) => (
+							<div key={`${name}-${index}`}>
+								{name} {price}€ x {amount}
+							</div>
+						))}
+					</ul>
+					<h3>Total :{total}€</h3>
+					<button onClick={() => setCart([])}>Vider le panier</button>
+				</div>
+			) : (
+				<div>Votre panier est vide</div>
+			)}
+		</div>
+	) : (
+		<div className='cart cart--closed'>
+			<button
+				className='cart__btn'
+				onClick={() => setIsOpen(true)}
+			>
+				Ouvrir le Panier
+			</button>
+		</div>
+	)
 }

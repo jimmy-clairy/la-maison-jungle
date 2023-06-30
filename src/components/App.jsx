@@ -1,16 +1,20 @@
-import Banner from './Banner';
+import Header from './Header';
 import Cart from './Cart';
-import Footer from './Footer';
 import ShoppingList from './ShoppingList';
+import Footer from './Footer';
+import { useState } from 'react';
+import '../styles/Main.css'
 
-
-function App() {
+export default function App() {
+  
+  const [cart, setCart] = useState([])
+  
   return (<>
-  <Banner />
-  <Cart/>
-  <ShoppingList/>
-  <Footer/>
+      <Header/>
+      <main className='main'>
+        <Cart cart={cart} setCart={setCart} />
+        <ShoppingList cart={cart} setCart={setCart} />
+      </main>
+      <Footer/>
   </>)
 }
-
-export default App;
