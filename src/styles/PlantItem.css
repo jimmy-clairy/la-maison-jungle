@@ -1,16 +1,14 @@
 .plantItem__cover {
     height: 250px;
     width: 250px;
-    border-radius: 20px;
+    border-radius: 2rem;
     object-fit: cover;
 }
 
 .plantItem {
-    margin: 10px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
+    padding: 1rem;
+    background-color: #31b4726a;
+    border-radius: 2rem;
     text-transform: capitalize;
     position: relative;
 }
@@ -24,4 +22,13 @@
     right: 0;
     top: 0;
     font-weight: 500;
+}
+
+.plantItem__body {
+    padding: 0.5rem;
+}
+
+.plantItem__content {
+    display: flex;
+    justify-content: space-between;
 }

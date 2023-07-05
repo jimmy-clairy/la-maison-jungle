@@ -21,11 +21,11 @@ export default function Cart({cart, setCart}) {
 			{cart.length > 0 ? (
 				<div>
 					<h2>Panier</h2>
-					<ul>
+					<ul className="cart__ul">
 						{cart.map(({ name, price, amount }, index) => (
-							<div key={`${name}-${index}`}>
-								{name} {price}€ x {amount}
-							</div>
+							<li className="cart__li" key={`${name}-${index}`}>
+								{amount} {name} {price}€ = {amount*price}€
+							</li>
 						))}
 					</ul>
 					<h3>Total :{total}€</h3>

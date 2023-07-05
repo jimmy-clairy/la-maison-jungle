@@ -4,7 +4,8 @@ import '../styles/ShoppingList.css'
 import Categories from './Categories'
 import PlantItem from './PlantItem'
 
-export default function ShoppingList({cart,setCart}) {
+export default function ShoppingList({addCart}) {
+    
 
     const [category, setCategory] = useState('')
 
@@ -19,10 +20,10 @@ export default function ShoppingList({cart,setCart}) {
         <div className='shoppingList'>
             <Categories setCategory={setCategory}/>
             <ul className='plantList'>
-                {resultCat.map(({ id, cover, name, water, light, price, category }) => (
-                    <div key={id}>
-                        <PlantItem cover={cover} plantName={name} water={water} light={light} price={price} category={category} />
-                        <button onClick={() => console.log("Add " + name)}>Ajouter</button>
+                {resultCat.map((plant) => (
+                    <div key={plant.id}>
+                        <PlantItem plant={plant} addCart={addCart} />
+                        
                     </div>
                 ))}
             </ul>

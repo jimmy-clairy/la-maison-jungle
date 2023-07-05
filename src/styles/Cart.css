@@ -25,3 +25,11 @@
 .cart--closed>.cart__btn {
     color: black;
 }
+
+.cart__ul {
+    padding-left: 0;
+}
+
+.cart__li {
+    list-style: none;
+}

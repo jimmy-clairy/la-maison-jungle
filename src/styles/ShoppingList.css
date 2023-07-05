@@ -4,8 +4,9 @@
 
 .plantList {
     list-style-type: none;
-    padding: 32px;
+    padding: 3rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1rem;
 }
