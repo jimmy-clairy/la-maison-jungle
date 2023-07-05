@@ -10,18 +10,16 @@ function PlantItem({ plant, addCart }) {
 			<div className='plantItem__body'>
 				<div className='plantItem__content'>
 					<div>
-						{plant.name}
-						<br/>
-						{plant.category}
+						<h3 className='plantItem__txt'>{plant.name}</h3>
+						<p className='plantItem__txt'>{plant.category}</p>
 					</div>
 					<div>
 						<CareScale careType='water' scaleValue={plant.water} />
 						<CareScale careType='light' scaleValue={plant.light} />
 					</div>
 				</div>
-				<button className='plantItem__btn' onClick={() => { addCart({name:plant.name,price:plant.price,id:plant.id})}}>Ajouter</button>
+				<button className='btn__style' onClick={() => { addCart({name:plant.name,price:plant.price,id:plant.id})}}>Ajouter</button>
 			</div>
-
 		</li>
 	)
 }

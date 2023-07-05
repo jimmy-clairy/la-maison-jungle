@@ -12,13 +12,13 @@ export default function Categories({setCategory}) {
 
   return (
             <div className='categories'>
-                    <select className='categories__select' onChange={(e) => setCategory(e.target.value)} name="plants" id="plant--select">
+                    <select className='categories__select capitalize' onChange={(e) => setCategory(e.target.value)} name="plants" id="plant--select">
 
                         <option value="">Toutes les plantes</option>
-                        {categories.map((category, index) => <option key={index} value={category}>{category[0].toUpperCase() + category.slice(1)}</option>)}
+                        {categories.map((category, index) => <option  key={index} value={category}>{category}</option>)}
                         
                     </select>
-                    <button onClick={() => setCategory('')}>Reinitialisé</button>
+                    <button className='btn__style' onClick={() => setCategory('')}>Reinitialisé</button>
             </div>
   )
 }

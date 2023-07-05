@@ -1,21 +1,25 @@
 .cart {
     flex: none;
-    padding: 32px;
-    width: 200px;
+    padding: 3rem;
+    width: 250px;
+}
+
+@media screen and (max-width: 875px) {
+    .cart {
+        width: 100%;
+    }
 }
 
 .cart--open {
     color: white;
     background-color: #31b572;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 
 .cart__btn {
+    width: 100%;
+    padding: 0;
     font-size: 1.8rem;
     background: none;
-    outline: none;
     border: none;
     font-weight: 600;
     cursor: pointer;

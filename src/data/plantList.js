@@ -19,26 +19,6 @@ export const plantList = [
         price: 15
     },
     {
-        name: 'ficus lyrata',
-        category: 'classique',
-        id: '2ab',
-        light: 3,
-        water: 1,
-        cover: lyrata,
-        price: 16
-    },
-
-    {
-        name: 'pothos argenté',
-        category: 'classique',
-        id: '3sd',
-        light: 1,
-        water: 2,
-        cover: pothos,
-
-        price: 9
-    },
-    {
         name: 'calathea',
         category: 'classique',
         id: '4kk',
@@ -77,6 +57,16 @@ export const plantList = [
         price: 5
     },
     {
+        name: 'pothos argenté',
+        category: 'classique',
+        id: '3sd',
+        light: 1,
+        water: 2,
+        cover: pothos,
+
+        price: 9
+    },
+    {
         name: 'succulente',
         category: 'plante grasse',
         id: '9vn',
@@ -84,6 +74,15 @@ export const plantList = [
         water: 1,
         cover: succulent,
         price: 8
+    },
+    {
+        name: 'ficus lyrata',
+        category: 'classique',
+        id: '2ab',
+        light: 3,
+        water: 1,
+        cover: lyrata,
+        price: 16
     },
 
     {

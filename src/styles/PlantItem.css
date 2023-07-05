@@ -7,10 +7,14 @@
 
 .plantItem {
     padding: 1rem;
-    background-color: #31b4726a;
+    background-color: rgba(48, 181, 115, 0.4);
     border-radius: 2rem;
     text-transform: capitalize;
     position: relative;
+}
+
+.plantItem__txt {
+    margin: 0;
 }
 
 .plantItem__price {
@@ -18,7 +22,8 @@
     border-radius: 20px 20px 20px 0;
     background-color: #31b472;
     color: white;
-    padding: 15px;
+    font-size: 1.8rem;
+    padding: 1.2rem;
     right: 0;
     top: 0;
     font-weight: 500;
@@ -31,27 +36,4 @@
 .plantItem__content {
     display: flex;
     justify-content: space-between;
-}
-
-.plantItem__btn {
-    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
-    border: none;
-    border-radius: 6px;
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
-    color: #fff;
-    cursor: pointer;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    transition: box-shadow .15s, transform .15s;
-    font-size: 1.6rem;
-}
-
-.plantItem__btn:hover {
-    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-    transform: translateY(-2px);
-}
-
-.plantItem__btn:active {
-    box-shadow: #3c4fe0 0 3px 7px inset;
-    transform: translateY(2px);
 }

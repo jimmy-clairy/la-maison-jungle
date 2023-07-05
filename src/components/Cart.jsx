@@ -16,7 +16,7 @@ export default function Cart({cart, setCart}) {
 				className='cart__btn'
 				onClick={() => setIsOpen(false)}
 			>
-				Fermer
+				Fermer le Panier
 			</button>
 			{cart.length > 0 ? (
 				<div>
@@ -24,12 +24,12 @@ export default function Cart({cart, setCart}) {
 					<ul className="cart__ul">
 						{cart.map(({ name, price, amount }, index) => (
 							<li className="cart__li" key={`${name}-${index}`}>
-								{amount} {name} {price}€ = {amount*price}€
+								{amount} <span className="capitalize">{name}</span> {price}€ = {amount*price}€
 							</li>
 						))}
 					</ul>
-					<h3>Total :{total}€</h3>
-					<button onClick={() => setCart([])}>Vider le panier</button>
+					<h3>Total : {total}€</h3>
+					<button className="btn__style" onClick={() => setCart([])}>Vider le panier</button>
 				</div>
 			) : (
 				<div>Votre panier est vide</div>
