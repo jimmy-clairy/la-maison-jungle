@@ -19,7 +19,7 @@ function PlantItem({ plant, addCart }) {
 						<CareScale careType='light' scaleValue={plant.light} />
 					</div>
 				</div>
-				<button onClick={() => { addCart({name:plant.name,price:plant.price,id:plant.id})}}>Ajouter</button>
+				<button className='plantItem__btn' onClick={() => { addCart({name:plant.name,price:plant.price,id:plant.id})}}>Ajouter</button>
 			</div>
 
 		</li>
