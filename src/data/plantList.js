@@ -1,12 +1,12 @@
-import monstera from '../assets/monstera.jpg'
-import lyrata from '../assets/lyrata.jpg'
-import pothos from '../assets/pothos.jpg'
-import succulent from '../assets/succulent.jpg'
-import olivier from '../assets/olivier.jpg'
-import basil from '../assets/basil.jpg'
-import mint from '../assets/mint.jpg'
-import calathea from '../assets/calathea.jpg'
-import cactus from '../assets/cactus.jpg'
+import monstera from '../assets/img/img_webp_500x500/monstera.webp'
+import lyrata from '../assets/img/img_webp_500x500/lyrata.webp'
+import pothos from '../assets/img/img_webp_500x500/pothos.webp'
+import succulent from '../assets/img/img_webp_500x500/succulent.webp'
+import olivier from '../assets/img/img_webp_500x500/olivier.webp'
+import basil from '../assets/img/img_webp_500x500/basil.webp'
+import mint from '../assets/img/img_webp_500x500/mint.webp'
+import calathea from '../assets/img/img_webp_500x500/calathea.webp'
+import cactus from '../assets/img/img_webp_500x500/cactus.webp'
 
 export const plantList = [
     {
@@ -37,7 +37,6 @@ export const plantList = [
         cover: olivier,
         price: 25
     },
-
     {
         name: 'cactus',
         category: 'plante grasse',
@@ -84,7 +83,6 @@ export const plantList = [
         cover: lyrata,
         price: 16
     },
-
     {
         name: 'menthe',
         category: 'extérieur',

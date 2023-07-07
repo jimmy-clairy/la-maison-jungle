@@ -1,14 +1,20 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "../styles/Cart.css"
 
 export default function Cart({cart, setCart}) {
   
   const [isOpen,setIsOpen] = useState(true)
 
+  /** Calcule le total du panier */
   const total = cart.reduce(
 		(acc, plantType) => acc + plantType.amount * plantType.price,
 		0
 	)
+
+	useEffect(() => {
+		document.title = `LMJ: ${total}€ d'achats`
+		localStorage.setItem('localCart', JSON.stringify(cart))	
+	}, [total,cart])
 
 	return isOpen ? (
 		<div className='cart cart--open'>
