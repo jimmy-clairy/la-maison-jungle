@@ -3,10 +3,10 @@ import "../styles/Cart.css"
 
 export default function Cart({cart, setCart}) {
   
-  const [isOpen,setIsOpen] = useState(true)
+  	const [isOpen,setIsOpen] = useState(true)
 
   /** Calcule le total du panier */
-  const total = cart.reduce(
+	const total = cart.reduce(
 		(acc, plantType) => acc + plantType.amount * plantType.price,
 		0
 	)
@@ -15,6 +15,11 @@ export default function Cart({cart, setCart}) {
 		document.title = `LMJ: ${total}€ d'achats`
 		localStorage.setItem('localCart', JSON.stringify(cart))	
 	}, [total,cart])
+
+	function removeItem(id) {
+		const newCart = cart.filter(c => c.id !== id)
+		setCart(newCart)
+	}
 
 	return isOpen ? (
 		<div className='cart cart--open'>
@@ -28,9 +33,9 @@ export default function Cart({cart, setCart}) {
 				<div>
 					<h2>Panier</h2>
 					<ul className="cart__ul">
-						{cart.map(({ name, price, amount }, index) => (
+						{cart.map(({ name, price, amount, id }, index) => (
 							<li className="cart__li" key={`${name}-${index}`}>
-								{amount} <span className="capitalize">{name}</span> {price}€ = {amount*price}€
+								{amount} <span className="capitalize">{name}</span> {price}€ = {amount*price}€ <button className="btn__style style1" onClick={() => removeItem(id)}>X</button>
 							</li>
 						))}
 					</ul>

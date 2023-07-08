@@ -45,6 +45,20 @@ img {
   transform: translateY(2px);
 }
 
+.style1 {
+  background-image: radial-gradient(100% 100% at 100% 0, #ff5a5a 0, #ff5454 100%);
+  margin-left: 1rem;
+  padding: 0.5rem 0.8rem;
+}
+
+.style1:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #e03c3c 0 -3px 0 inset;
+}
+
+.style1:active {
+  box-shadow: #e03c3c 0 3px 7px inset;
+}
+
 .capitalize {
   text-transform: capitalize;
 }
