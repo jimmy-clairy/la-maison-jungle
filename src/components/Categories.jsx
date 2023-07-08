@@ -1,5 +1,4 @@
 import { plantList } from '../data/plantList'
-import '../styles/Categories.css'
 
 export default function Categories({setCategory}) {
 

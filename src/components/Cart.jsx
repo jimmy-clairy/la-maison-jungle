@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import "../styles/Cart.css"
 
 export default function Cart({cart, setCart}) {
   

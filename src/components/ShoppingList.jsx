@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import { plantList } from '../data/plantList'
-import '../styles/ShoppingList.css'
 import Categories from './Categories'
 import PlantItem from './PlantItem'
 
-export default function ShoppingList({cart,setCart}) {
+export default function ShoppingList({cart,setCart, setModal}) {
     
     const [category, setCategory] = useState('')
 
@@ -20,7 +19,7 @@ export default function ShoppingList({cart,setCart}) {
             <Categories setCategory={setCategory}/>
             <ul className='plantList'>
                 {resultCat.map((plant) => (
-                <PlantItem key={plant.id} plant={plant} cart={cart} setCart={setCart} />
+                <PlantItem key={plant.id} plant={plant} cart={cart} setCart={setCart} setModal={setModal}/>
                 ))}
             </ul>
         </div>

@@ -1,7 +1,6 @@
 import CareScale from './CareScale'
-import '../styles/PlantItem.css'
 
-export default function PlantItem({ plant, cart, setCart }) {
+export default function PlantItem({ plant, cart, setCart, setModal}) {
 
 	/**
 	 * Ajoute un objet au panier.
@@ -36,7 +35,10 @@ export default function PlantItem({ plant, cart, setCart }) {
 						<CareScale careType='light' scaleValue={plant.light} />
 					</div>
 				</div>
-				<button className='btn__style' onClick={() => { addCart({name:plant.name, price:plant.price, id:plant.id})}}>Ajouter</button>
+				<div className="plantItem__btns">
+					<button className='btn__style' onClick={() => { addCart({name:plant.name, price:plant.price, id:plant.id})}}>Ajouter</button>
+					<button className='btn__style' onClick={() => setModal({position:true, id:plant.id, name:plant.name, info:plant.info})}>Info</button>
+				</div>
 			</div>
 		</li>
 	)

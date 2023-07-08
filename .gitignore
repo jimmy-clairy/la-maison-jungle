@@ -3,6 +3,9 @@
 # img 
 assets
 
+#sass
+sass
+
 # dependencies
 /node_modules
 /.pnp
