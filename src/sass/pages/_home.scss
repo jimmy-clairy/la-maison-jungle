@@ -1,0 +1,21 @@
+.main {
+    display: flex;
+    flex-direction: row;
+
+    @include laptop {
+        flex-direction: column;
+    }
+}
+
+.shoppingList {
+    flex: 1;
+}
+
+.plantList {
+    list-style-type: none;
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}

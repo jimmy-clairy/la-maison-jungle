@@ -1,0 +1,38 @@
+.cart {
+    flex: none;
+    padding: 3rem;
+    width: 300px;
+
+    @include laptop {
+        width: 100%;
+    }
+
+    &--open {
+        color: white;
+        background-color: $cl-primary;
+    }
+
+    &__btn {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+        background: none;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        color: white;
+    }
+
+    &--closed>&__btn {
+        color: black;
+    }
+
+    &__ul {
+        padding-left: 0;
+    }
+
+    &__li {
+        list-style: none;
+    }
+}

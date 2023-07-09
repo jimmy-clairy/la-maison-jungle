@@ -1,0 +1,44 @@
+.plantItem__cover {
+    height: 250px;
+    width: 250px;
+    border-radius: 2rem;
+    object-fit: cover;
+}
+
+.plantItem {
+    padding: 1rem;
+    background-color: rgba($cl-primary, 0.4);
+    border-radius: 2rem;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.plantItem__txt {
+    margin: 0;
+}
+
+.plantItem__price {
+    position: absolute;
+    border-radius: 20px 20px 20px 0;
+    background-color: $cl-primary;
+    color: white;
+    font-size: 1.8rem;
+    padding: 1.2rem;
+    right: 0;
+    top: 0;
+    font-weight: 500;
+}
+
+.plantItem__body {
+    padding: 0.5rem;
+}
+
+.plantItem__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.plantItem__btns {
+    display: flex;
+    justify-content: space-between;
+}
